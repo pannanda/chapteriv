@@ -1,0 +1,51 @@
+  [  
+    
+{
+    "firstName": "Paula",
+    "lastName": "Carvalho",
+    "adress": "Teste",
+    "emailAdress": "paula@domini.com",
+    "radioGender": "f",
+    "checks": [
+        "Netflix",
+        "Livros",
+        "Dormir"
+    ],
+    "selectCountries": "Índia",
+    "selectYears": "2019",
+    "selectMonths": "Abril",
+    "pwd": "@Alunos21"
+    },
+
+    {
+        "firstName": "Jose",
+        "lastName": "Carvalho",
+        "adress": "Teste",
+        "emailAdress": "jose@domini.com",
+        "radioGender": "m",
+        "checks": [
+            "Livros",
+            "Dormir"
+        ],
+        "selectCountries": "Brasil",
+        "selectYears": "2019",
+        "selectMonths": "Abril",
+        "pwd": "@Alunos21"
+        },
+
+        {
+            "firstName": "Marina",
+            "lastName": "Carvalho",
+            "adress": "Teste",
+            "emailAdress": "marina@domini.com",
+            "radioGender": "f",
+            "checks": [
+                "Livros"
+                
+            ],
+            "selectCountries": "Brasil",
+            "selectYears": "2016",
+            "selectMonths": "Junho",
+            "pwd": "@Alunos21"
+            }
+]
