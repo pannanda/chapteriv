@@ -1,6 +1,6 @@
 
 
-describe('', () => {
+describe('Listagem', () => {
     
     it ('Quando não houver cadastros, então a listagem deve estar vazia', () => {
      cy.fixture('listagem-vazia').then (data => {
