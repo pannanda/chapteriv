@@ -1,0 +1,40 @@
+
+name: Testes 
+
+# Gatilhos: que podem ser programados (por tempo) ou acionados (eventos)
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+  
+# Define a Maquina ou ambiente
+    runs-on: ubuntu-latest
+
+# Passos    
+    steps:
+# Download do código    
+    - uses: actions/checkout@v2
+# Setup da versão do node    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+   
+#  Comandos (onde o primeiro comando vai ser a instalação das dev dependencies, segundo execução dos testes - continuando mesmo que algum falhe - e terceiro com a geração do relatório)
+    - run: npm install
+    - run: npm cy:run
+      continue-on-error: true
+   
+   - run: npm run report:merge
+   
+   - run: npm run report:mocha
+    
+# GitHub Pages (para publicar o relatório para que qualquer pessoa possa acessá-lo, sendo relatorio gerado em html) usando "Deploy to GitHub Pages>> JamesIves"
+- name: Deploy to GitHub Pages
+  uses: JamesIves/github-pages-deploy-action@4.1.5
+  with:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      BRANCH: gh-pages
+      FOLDER: mochawesome-report
